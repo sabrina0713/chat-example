@@ -1,5 +1,5 @@
 var app = require('express')();
-var http = require('http').Server(app);
+var server = require('http').Server(app);
 const io = require('socket.io')(server,{
   perMessageDeflate :false
 });
@@ -15,6 +15,6 @@ io.on('connection', function(socket){
   });
 });
 
-http.listen(port, function(){
+server.listen(port, function(){
   console.log('listening on *:' + port);
 });
